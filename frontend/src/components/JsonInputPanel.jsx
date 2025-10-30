@@ -27,7 +27,7 @@ function JsonInputPanel({ jsonInput, setJsonInput, error, handleGenerateTree, ha
         </button>
         <button
           onClick={handleClearJSON}
-          className="px-4 py-6 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg bg-gray-200 hover:bg-gray-300 text-gray-700"
+          className="px-4 py-3 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg bg-gray-200 hover:bg-gray-300 text-gray-700"
         >
           Clear
         </button>

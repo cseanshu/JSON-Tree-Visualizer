@@ -29,9 +29,9 @@ function SearchBar({
         {searchQuery && (
           <button
             onClick={handleClearSearch}
-            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
           >
-            Clear Search
+            ClearSearch
           </button>
         )}
 
@@ -39,7 +39,7 @@ function SearchBar({
           <>
             <button
               onClick={handleDownloadImage}
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -48,9 +48,9 @@ function SearchBar({
             </button>
             <button
               onClick={handleClearTree}
-              className="py-2.5 px-6 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg bg-gray-200 hover:bg-gray-300 text-gray-700"
+              className="py-2 px-6 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg bg-gray-200 hover:bg-gray-300 text-gray-700"
             >
-              Clear Tree
+              ClearTree
             </button>
           </>
         )}
