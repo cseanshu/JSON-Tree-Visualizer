@@ -36,6 +36,19 @@ function FlowContainer() {
 
   const [originalNodeStyles, setOriginalNodeStyles] = useState(new Map());
 
+  const handleSearchQueryChange = useCallback((value) => {
+    setSearchQuery(value);
+    if (!value.trim()) {
+      setSearchMessage('');
+      setNodes(nds =>
+        nds.map(node => ({
+          ...node,
+          style: originalNodeStyles.get(node.id) || node.style,
+        }))
+      );
+    }
+  }, [setNodes, originalNodeStyles]);
+
   const handleGenerateTree = useCallback(() => {
     setSearchMessage('');
     setSearchQuery('');
@@ -188,7 +201,7 @@ function FlowContainer() {
       handleClearJSON={handleClearJSON}
 
       searchQuery={searchQuery}
-      setSearchQuery={setSearchQuery}
+      setSearchQuery={handleSearchQueryChange}
       handleSearch={handleSearch}
       handleClearSearch={handleClearSearch}
       searchMessage={searchMessage}
