@@ -46,6 +46,45 @@ frontend/src/components/
 - Tailwind CSS - Styling framework
 - html-to-image - Image export functionality
 
+## Getting Started
+
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm 
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd timper
+```
+
+2. Navigate to the frontend directory:
+```bash
+cd frontend
+```
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+### Running the Project
+
+To start the development server:
+```bash
+npm run dev
+```
+
+The application will start on `http://localhost:5173` (default Vite port)
+
+### Building the Project
+
+To create a production build:
+```bash
+npm run build
+```
 ## Features
 
 ### Core Features
