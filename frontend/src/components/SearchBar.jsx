@@ -2,6 +2,7 @@ function SearchBar({
   searchQuery,
   setSearchQuery,
   handleSearch,
+  handleClearSearch,
   searchMessage,
   copyMessage,
   nodes,
@@ -25,6 +26,14 @@ function SearchBar({
         >
           Search
         </button>
+        {searchQuery && (
+          <button
+            onClick={handleClearSearch}
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+          >
+            Clear Search
+          </button>
+        )}
 
         {nodes.length > 0 && (
           <>

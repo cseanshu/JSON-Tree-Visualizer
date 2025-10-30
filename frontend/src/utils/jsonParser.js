@@ -89,13 +89,19 @@ const parseJSON = (data, parentId = null, key = "root", path = "$") => {
       edges.push(...childEdges);
     });
   } else {
-    // Primitive value
-    const displayValue = typeof data === "string" ? `"${data}"` : String(data);
-    const label = key === "root" ? displayValue : `${key}: ${displayValue}`;
-    nodes.push(createNode(currentId, label, "primitive", path, data));
+    if (key === "root") {
+      const displayValue = typeof data === "string" ? `"${data}"` : String(data);
+      nodes.push(createNode(currentId, displayValue, "primitive", path, data));
+    } else {
+      nodes.push(createNode(currentId, key, "object", path));
+
+      const valueId = getNodeId();
+      const displayValue = typeof data === "string" ? `"${data}"` : String(data);
+      nodes.push(createNode(valueId, displayValue, "primitive", path, data));
+      edges.push(createEdge(currentId, valueId));
+    }
   }
 
-  // Create edge from parent to current node
   if (parentId !== null) {
     edges.push(createEdge(parentId, currentId));
   }

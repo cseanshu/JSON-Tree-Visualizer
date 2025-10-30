@@ -10,6 +10,7 @@ function FlowPresentation({
   searchQuery,
   setSearchQuery,
   handleSearch,
+  handleClearSearch,
   searchMessage,
   copyMessage,
   nodes,
@@ -41,6 +42,7 @@ function FlowPresentation({
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
                 handleSearch={handleSearch}
+                handleClearSearch={handleClearSearch}
                 searchMessage={searchMessage}
                 copyMessage={copyMessage}
                 nodes={nodes}

@@ -155,7 +155,6 @@ function FlowContainer() {
                 background: '#ef4444',
                 border: '3px solid #dc2626',
                 boxShadow: '0 0 20px rgba(239, 68, 68, 0.6)',
-                transform: 'scale(1.1)',
               },
             };
           } else {
@@ -169,6 +168,17 @@ function FlowContainer() {
     }
   }, [searchQuery, nodes, setNodes, originalNodeStyles]);
 
+  const handleClearSearch = useCallback(() => {
+    setSearchQuery('');
+    setSearchMessage('');
+    setNodes(nds =>
+      nds.map(node => ({
+        ...node,
+        style: originalNodeStyles.get(node.id) || node.style,
+      }))
+    );
+  }, [setNodes, originalNodeStyles]);
+
   return (
     <FlowPresentation
       jsonInput={jsonInput}
@@ -180,6 +190,7 @@ function FlowContainer() {
       searchQuery={searchQuery}
       setSearchQuery={setSearchQuery}
       handleSearch={handleSearch}
+      handleClearSearch={handleClearSearch}
       searchMessage={searchMessage}
       copyMessage={copyMessage}
       nodes={nodes}
